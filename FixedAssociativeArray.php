@@ -16,6 +16,7 @@ namespace Twire\Common;
  *         public function __construct(array $data = [])
  *         {
  *             parent::__construct([
+ *                 'ID',
  *                 'UserName',
  *                 'IsAdmin'
  * 		      ]);
@@ -35,24 +36,24 @@ namespace Twire\Common;
  * At runtime, data objects can be created easily by using the provided static methods.
  * The freeze method copies the structure as well as data. The mirror method only copies the structure.
  * <code>
- *     $someArray = ['UserName' => 'H.Finch', 'IsAdmin' = true];
+ *     $user = ['ID' => 1337, 'UserName' => 'H.Finch', 'IsAdmin' = true];
  *
  *     // $userData will have two fixed properties which are allready set with data after calling the freeze method:
- *     $userData = FixedAssociativeArray::freeze($someArray);
+ *     $user1337Data = FixedAssociativeArray::freeze($user);
  *
  *     // $userData will have two fixed properties which are initialized with NULL after calling the mirror method:
- *     $userData = FixedAssociativeArray::mirror($someArray);
+ *     $userData = FixedAssociativeArray::mirror($user);
  * </code>
  *
  * Implements ArrayAccess, Countable and Iterator allowing the FixedAssociativeArray to
  * be iterated and accessed like a native array.
  * <code>
- *     $fixedArray['elementOne'] = 'someData';
+ *     $fixedArray['elementOne'] = 'foo';
  * </code>
  *
  * Elements can also be accessed as regular object properties.
  * <code>
- *     $fixedArray->elementOne = 'someData';
+ *     $fixedArray->elementOne = 'bar';
  * </code>
  *
  * At any given moment an instance of FixedAssociativeArray may also:
