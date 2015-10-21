@@ -19,7 +19,7 @@ namespace Twire\Common;
  *                 'ID',
  *                 'UserName',
  *                 'IsAdmin'
- * 		      ]);
+ *             ]);
  *
  *             $this->massUpdate($data);
  *         }
